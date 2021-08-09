@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Chapter1_02
+
+# Controls when the workflow will run
+on: [push]
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: job1
+      - run: python3 hello.py
+  job2:
+    runs-on: windows-latest
+    steps:
+      - name: job2
+      - run: python3 hello.py
+  job3:
+    runs-on: macos-latest
+    steps:
+      - name: job4
+      - run: python3 hello.py
+  job4:
+    runs-on: ubuntu-latest
+    needs: [job1,job2,job3]
+    steps:
+      - name: job4
+      - run: python3 hello.py
